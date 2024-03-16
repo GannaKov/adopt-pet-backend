@@ -1,19 +1,17 @@
 const express = require("express");
+const {
+  getAllTypes,
+  getAllAnimals,
+  getAnimalsByType,
+} = require("../controllers/animals");
 
 animalRouter = express.Router();
 
-animalRouter.get("/", (req, res, next) => {
-  res.send("Hello here types!");
-});
+animalRouter.get("/", getAllTypes);
 
-animalRouter.get("/animals", (req, res, next) => {
-  res.send("Hello here all animals!");
-});
+animalRouter.get("/animals", getAllAnimals);
 
-animalRouter.get("/animals/:pet_type", (req, res, next) => {
-  let animalType = req.params.pet_type;
-  res.send(`Hello here ${animalType} animals!`);
-});
+animalRouter.get("/animals/:pet_type", getAnimalsByType);
 
 animalRouter.get("/animals/:pet_type/:pet_id", (req, res, next) => {
   let animalType = req.params.pet_type;
