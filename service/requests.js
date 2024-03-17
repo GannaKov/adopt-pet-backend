@@ -1,7 +1,7 @@
 const axios = require("axios");
 const pets = require("../petList");
 
-const listAnimals = () => {
+const queryListAnimals = () => {
   //   for (key in pets) {
   //     console.log("key", key);
   //     console.log(pets[key]);
@@ -9,13 +9,13 @@ const listAnimals = () => {
   return pets;
 };
 
-const getTypes = () => {
+const queryTypes = () => {
   const typesArr = Object.keys(pets);
 
   return typesArr;
 };
 
-const getByType = async (type) => {
+const queryByType = async (type) => {
   const animalArr = await listAnimals();
   if (animalArr.hasOwnProperty(type)) {
     const animalArrByType = animalArr[type];
@@ -26,7 +26,7 @@ const getByType = async (type) => {
   }
 };
 
-const singleAnimal = async (type, id) => {
+const querySingleAnimal = async (type, id) => {
   const arrByType = await getByType(type);
   if (arrByType) {
     const animal = arrByType.find((item) => item.id === id);
@@ -36,4 +36,9 @@ const singleAnimal = async (type, id) => {
   }
 };
 
-module.exports = { listAnimals, getTypes, getByType, singleAnimal };
+module.exports = {
+  queryListAnimals,
+  queryTypes,
+  queryByType,
+  querySingleAnimal,
+};
