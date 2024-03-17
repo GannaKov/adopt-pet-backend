@@ -46,7 +46,7 @@ const pets = {
       url: "http://placekitten.com/500/500",
     },
     {
-      id: "cat-uJA0mv",
+      id: "cat-uJB0mv",
       name: "Ketty",
       age: 1,
       breed: "Tabby",
@@ -54,7 +54,7 @@ const pets = {
       url: "http://placekitten.com/500/500",
     },
     {
-      id: "cat-uJA0mv",
+      id: "cat-uJC0mv",
       name: "Bobr",
       age: 1,
       breed: "Tabby",
@@ -63,7 +63,7 @@ const pets = {
       url: "http://placekitten.com/500/500",
     },
     {
-      id: "cat-uJA0mv",
+      id: "cat-uJD0mv",
       name: "Wiskey",
       age: 1,
       breed: "Tabby",
