@@ -15,15 +15,25 @@ const getTypes = () => {
   return typesArr;
 };
 
-const getByType = (type) => {
-  const animalArr = listAnimals();
+const getByType = async (type) => {
+  const animalArr = await listAnimals();
   if (animalArr.hasOwnProperty(type)) {
     const animalArrByType = animalArr[type];
-    console.log("by type", animalArrByType);
+
     return animalArrByType;
   } else {
     return null;
   }
 };
 
-module.exports = { listAnimals, getTypes, getByType };
+const singleAnimal = async (type, id) => {
+  const arrByType = await getByType(type);
+  if (arrByType) {
+    const animal = arrByType.find((item) => item.id === id);
+    return animal || null;
+  } else {
+    return null;
+  }
+};
+
+module.exports = { listAnimals, getTypes, getByType, singleAnimal };
