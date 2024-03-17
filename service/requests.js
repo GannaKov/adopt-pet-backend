@@ -16,7 +16,7 @@ const queryTypes = () => {
 };
 
 const queryByType = async (type) => {
-  const animalArr = await listAnimals();
+  const animalArr = await queryListAnimals();
   if (animalArr.hasOwnProperty(type)) {
     const animalArrByType = animalArr[type];
 
@@ -27,7 +27,7 @@ const queryByType = async (type) => {
 };
 
 const querySingleAnimal = async (type, id) => {
-  const arrByType = await getByType(type);
+  const arrByType = await queryByType(type);
   if (arrByType) {
     const animal = arrByType.find((item) => item.id === id);
     return animal || null;
