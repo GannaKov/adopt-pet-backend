@@ -6,10 +6,14 @@ const {
 } = require("../service/requests");
 //const HttpError = require("../helpers/HttpError");
 
-const getAllAnimals = async (req, res) => {
-  const result = await queryListAnimals();
+const getLimitedAnimals = async (req, res) => {
+  const pets = await queryListAnimals();
+  const limitedPets = {};
 
-  res.json(result);
+  for (const [key, value] of Object.entries(pets)) {
+    limitedPets[key] = value.slice(0, 3);
+  }
+  res.json(limitedPets);
 };
 
 const getAllTypes = async (req, res) => {
@@ -46,7 +50,7 @@ const getSingleAnimal = async (req, res, next) => {
 };
 
 module.exports = {
-  getAllAnimals,
+  getLimitedAnimals,
   getAllTypes,
   getAnimalsByType,
   getSingleAnimal,

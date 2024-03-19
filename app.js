@@ -1,5 +1,6 @@
 const express = require("express");
 const animalRouter = require("./routes/animalRouters");
+const mainPageRouter = require("./routes/mainPageRouter.js");
 //require('dotenv').config();
 const cors = require("cors");
 const app = express();
@@ -9,10 +10,14 @@ app.use(cors());
 app.use(express.json());
 //const path = require('path');
 
-app.use("/", animalRouter);
-
-app.use((req, res) => {
-  res.status(404).json({ message: "Not found" });
+app.use("/animals", animalRouter);
+app.use("/main-page", mainPageRouter);
+app.use((err, req, res, next) => {
+  if (err.status === 404) {
+    res.status(404).send("Not found");
+  } else {
+    next(err);
+  }
 });
 
 app.use((err, req, res, next) => {

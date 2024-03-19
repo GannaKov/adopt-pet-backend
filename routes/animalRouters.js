@@ -1,7 +1,7 @@
 const express = require("express");
 const {
   getAllTypes,
-  getAllAnimals,
+  getLimitedAnimals,
   getAnimalsByType,
   getSingleAnimal,
 } = require("../controllers/animals");
@@ -10,10 +10,10 @@ animalRouter = express.Router();
 
 animalRouter.get("/", getAllTypes);
 
-animalRouter.get("/animals", getAllAnimals);
+// animalRouter.get("/main-page", getLimitedAnimals);
 
-animalRouter.get("/animals/:pet_type", getAnimalsByType);
+animalRouter.get("/:pet_type", getAnimalsByType);
 
-animalRouter.get("/animals/:pet_type/:pet_id", getSingleAnimal);
+animalRouter.get("/:pet_type/:pet_id", getSingleAnimal);
 
 module.exports = animalRouter;
