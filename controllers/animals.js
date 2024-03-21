@@ -1,25 +1,18 @@
 const {
-  queryListAnimals,
   queryTypes,
   queryByType,
   querySingleAnimal,
 } = require("../service/requests");
-//const HttpError = require("../helpers/HttpError");
-
-const getLimitedAnimals = async (req, res) => {
-  const pets = await queryListAnimals();
-  const limitedPets = {};
-
-  for (const [key, value] of Object.entries(pets)) {
-    limitedPets[key] = value.slice(0, 3);
-  }
-  res.json(limitedPets);
-};
 
 const getAllTypes = async (req, res) => {
   const result = await queryTypes();
 
-  res.json(result);
+  // res.json(result);
+  res.status(200).json({
+    status: "success",
+    code: 200,
+    data: result,
+  });
 };
 
 const getAnimalsByType = async (req, res, next) => {
@@ -30,7 +23,12 @@ const getAnimalsByType = async (req, res, next) => {
     if (!animalsArrByType) {
       throw { status: 404, message: "Not found" };
     }
-    res.json(animalsArrByType);
+    //res.json(animalsArrByType);
+    res.status(200).json({
+      status: "success",
+      code: 200,
+      data: animalsArrByType,
+    });
   } catch (error) {
     next(error);
   }
@@ -43,14 +41,18 @@ const getSingleAnimal = async (req, res, next) => {
     if (!animal) {
       throw { status: 404, message: "Not found" };
     }
-    res.json(animal);
+    //res.json(animal);
+    res.status(200).json({
+      status: "success",
+      code: 200,
+      data: animal,
+    });
   } catch (error) {
     next(error);
   }
 };
 
 module.exports = {
-  getLimitedAnimals,
   getAllTypes,
   getAnimalsByType,
   getSingleAnimal,
