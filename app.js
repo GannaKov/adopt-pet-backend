@@ -14,7 +14,7 @@ app.use("/animals", animalRouter);
 app.use("/main-page", mainPageRouter);
 app.use((err, req, res, next) => {
   if (err.status === 404) {
-    res.status(404).send("Not found");
+    res.status(404).send("Not found !");
   } else {
     next(err);
   }
