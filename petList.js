@@ -52,8 +52,8 @@ const pets = {
       breed: "Tabby",
       description:
         "Snowflake is a playful kitten who loves roaming the house and exploring.",
-      url: "http://placekitten.com/500/500",
-      // url: "https://loremflickr.com/500/280/maus?lock=61",
+      //url: "http://placekitten.com/500/500",
+      url: "https://loremflickr.com/500/280/maus?lock=59",
     },
     {
       id: "cat-uJB0mv",
@@ -62,8 +62,8 @@ const pets = {
       age: "4 years",
       breed: "Tabby",
       description: "Ketty is  loves roaming the house and exploring.",
-      url: "http://placekitten.com/500/500",
-      //url: "https://loremflickr.com/500/280/maus?lock=60",
+      //url: "http://placekitten.com/500/500",
+      url: "https://loremflickr.com/500/280/maus?lock=60",
     },
     {
       id: "cat-uJC0mv",
