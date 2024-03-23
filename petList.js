@@ -7,8 +7,8 @@ const pets = {
       age: "2 years",
       breed: "Dalmatian",
       description: "Spot is an energetic puppy who seeks fun and adventure!",
-      // url: "https://placedog.net/500/280?id=13",
-      url: "https://place.dog/500/280",
+      url: "https://placedog.net/500/280?id=13",
+      // url: "https://place.dog/500/280",
     },
     {
       id: "dog-hlj5tl",
@@ -18,8 +18,8 @@ const pets = {
       breed: "Border Collie",
       description:
         "Eager and curious, Shadow enjoys company and can always be found tagging along at your heels!",
-      //url: "https://placedog.net/500/280?id=15",
-      url: "https://place.dog/500/280",
+      url: "https://placedog.net/500/280?id=15",
+      //url: "https://place.dog/500/280",
     },
     {
       id: "dog-uJA0mv",
@@ -29,8 +29,8 @@ const pets = {
       breed: " Collie",
       description:
         "Catty curious,  and can always be found tagging along at your heels!",
-      // url: "https://placedog.net/500/280?id=10",
-      url: "https://place.dog/500/280",
+      url: "https://placedog.net/500/280?id=10",
+      // url: "https://place.dog/500/280",
     },
     {
       id: "dog-uJA0mO",
@@ -39,8 +39,8 @@ const pets = {
       age: "2 weeks",
       breed: "Unknown",
       description: "Baby is very very sweet !!!!",
-      // url: "https://placedog.net/500/280?id=12",
-      url: "https://place.dog/500/280",
+      url: "https://placedog.net/500/280?id=12",
+      // url: "https://place.dog/500/280",
     },
   ],
   cats: [
@@ -52,8 +52,8 @@ const pets = {
       breed: "Tabby",
       description:
         "Snowflake is a playful kitten who loves roaming the house and exploring.",
-      // url: "http://placekitten.com/500/500",
-      url: "https://loremflickr.com/500/280/maus?lock=61",
+      url: "http://placekitten.com/500/500",
+      // url: "https://loremflickr.com/500/280/maus?lock=61",
     },
     {
       id: "cat-uJB0mv",
@@ -62,8 +62,8 @@ const pets = {
       age: "4 years",
       breed: "Tabby",
       description: "Ketty is  loves roaming the house and exploring.",
-      //url: "http://placekitten.com/500/500",
-      url: "https://loremflickr.com/500/280/maus?lock=60",
+      url: "http://placekitten.com/500/500",
+      //url: "https://loremflickr.com/500/280/maus?lock=60",
     },
     {
       id: "cat-uJC0mv",
