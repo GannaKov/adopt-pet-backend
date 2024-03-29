@@ -1,7 +1,6 @@
 const express = require("express");
 const {
   getAllTypes,
-  getLimitedAnimals,
   getAnimalsByType,
   getSingleAnimal,
 } = require("../controllers/animals");
@@ -9,8 +8,6 @@ const {
 animalRouter = express.Router();
 
 animalRouter.get("/", getAllTypes);
-
-// animalRouter.get("/main-page", getLimitedAnimals);
 
 animalRouter.get("/:pet_type", getAnimalsByType);
 

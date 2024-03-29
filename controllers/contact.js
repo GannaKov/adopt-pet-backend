@@ -1,42 +1,22 @@
-const { nanoid } = require("nanoid");
+const Feedback = require("../models/contactForm");
 
 const postContactForm = async (req, res, next) => {
   const { username, email, message, subject } = req.body;
-  const newMsg = {
-    id: nanoid(6),
-    username,
-    email,
-    message,
-    subject,
-  };
+
   try {
-    res.status(201).json({
-      status: "success",
-      code: 201,
-      data: { newMsg },
+    const newFeedback = await Feedback.create({
+      username,
+      email,
+      message,
+      subject,
     });
+    if (!newFeedback) {
+      throw { status: 500, message: "Failed to create feedback" };
+    }
+
+    res.status(201).json({ status: "Created ", code: 201, data: newFeedback });
   } catch (err) {
-    res.status(err.status).json({
-      code: err.status,
-      status: err.message,
-    });
+    next(err);
   }
-  //   contactMsg.push(newMsg);
-
-  // {"username":"Ganna",
-  // "email":"aaa@dddd",
-  // "message":"dddd",
-  // "subject":"ssssssssssssss"}
-  //   try {
-  //     const type = req.params.pet_type;
-
-  //     const animalsArrByType = await queryByType(type);
-  //     if (!animalsArrByType) {
-  //       throw { status: 404, message: "Not found" };
-  //     }
-  //     res.json(animalsArrByType);
-  //   } catch (error) {
-  //     next(error);
-  //   }
 };
 module.exports = { postContactForm };
