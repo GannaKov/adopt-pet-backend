@@ -19,4 +19,5 @@ const postContactForm = async (req, res, next) => {
     next(err);
   }
 };
+
 module.exports = { postContactForm };

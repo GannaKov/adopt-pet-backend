@@ -1,6 +1,23 @@
 const { getTypes } = require("../controllers/animals");
 const { Pet } = require("../models/animals");
 
+// async function getLimitedAnimals(req, res, next) {
+//   try {
+//     const limitedPets = await Pet.aggregate([
+//       { $sort: { type: 1 } },
+//       { $group: { _id: "$type", pets: { $push: "$$ROOT" } } },
+//       { $project: { _id: 1, pets: { $slice: ["$pets", 3] } } },
+//     ]);
+//     console.log("pt1", limitedPets);
+//     res.status(200).json({
+//       status: "success",
+//       code: 200,
+//       data: limitedPets,
+//     });
+//   } catch (err) {
+//     next(err);
+//   }
+// }
 
 const getLimitedAnimals = async (req, res, next) => {
   try {
@@ -26,7 +43,6 @@ const getLimitedAnimals = async (req, res, next) => {
     next(error);
   }
 };
-
 
 module.exports = {
   getLimitedAnimals,

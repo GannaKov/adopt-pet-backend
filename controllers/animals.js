@@ -4,6 +4,8 @@ const { PetType, Pet } = require("../models/animals");
 
 //get all types
 const getTypes = async () => {
+  // const tagr = await getPetTypes();
+  // console.log("pt2", tagr);
   const types = await PetType.find();
   const typesArray = types.map((obj) => obj.type);
 
@@ -72,6 +74,26 @@ const getSingleAnimal = async (req, res, next) => {
   }
 };
 
+//-------------
+// const getPetTypes = async () => {
+//   try {
+//     const petsTypes = await Pet.aggregate([{ $group: { _id: "$type" } }]);
+//     console.log("pt2", petsTypes);
+//     return petsTypes.map((entry) => entry._id);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+
+// async function getPetTypes() {
+//   try {
+//     const petsTypes = await Pet.distinct("type");
+//     return petsTypes;
+//   } catch (error) {
+//     console.error("Error fetching pet types:", error);
+//     throw error;
+//   }
+// }
 module.exports = {
   getAllTypes,
   getAnimalsByType,
